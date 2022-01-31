@@ -11,17 +11,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    if message.author != client.user:
 
-    if message.author == client.user:
-        return
-
-    if message.author == weird_recipient:
-        print("yes")
-        await message.add_reaction(emote_weird)
-
-    if message.content == "test":
-        print("yes")
-        await message.add_reaction(emote_weird)
+        if str(message.author) == weird_recipient:
+            print("yes")
+            await message.add_reaction(emote_weird)
 
 
 client.run(bot_key)
