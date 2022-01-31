@@ -1,5 +1,5 @@
 import discord
-from BOTrequiredData import *
+from BOTrequiredDataPrivate import *
 
 client = discord.Client()
 
@@ -15,7 +15,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.author == recipient:
+    if message.author == weird_recipient:
         print("yes")
         await message.add_reaction(emote_weird)
 
