@@ -27,3 +27,5 @@ async def on_message(message):
             pogD_token = True
 
 client.run(os.environ.get("BOTKEY"))
+
+# TODO: omegalul.py implemented + On command omegalul airstrike + GIGAwide abdi construction + Auto ratio
