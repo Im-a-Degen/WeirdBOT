@@ -18,9 +18,10 @@ async def on_message(message):
         if str(message.author) == weird_recipient:
             await message.add_reaction(emote_weird)
 
-        if pogD_token and message.content == emote_pogD:
-            pogD_token = False
-            await message.channel.send("<:botPogD:937903199698952233>")
+        if message.content == emote_pogD:
+            if pogD_token:
+                pogD_token = False
+                await message.channel.send("<:botPogD:937903199698952233>")
         else:
             pogD_token = True
 
