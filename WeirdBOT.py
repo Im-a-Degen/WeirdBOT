@@ -1,6 +1,6 @@
 import discord
 import os
-from BOTrequiredDataPrivate import *
+from BOTrequiredDataPublic import *
 
 client = discord.Client()
 pogD_token = True
@@ -16,7 +16,7 @@ async def on_message(message):
     if message.author != client.user:
         global pogD_token
 
-        if str(message.author) == weird_recipient:
+        if message.author.id == weird_recipient:
             await message.add_reaction(emote_weird)
 
         if message.content == emote_pogD:
