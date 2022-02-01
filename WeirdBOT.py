@@ -1,4 +1,5 @@
 import discord
+import os
 from BOTrequiredDataPrivate import *
 
 client = discord.Client()
@@ -25,4 +26,4 @@ async def on_message(message):
         else:
             pogD_token = True
 
-client.run(bot_key)
+client.run(os.environ.get("BOTKEY"))
