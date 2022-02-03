@@ -96,5 +96,6 @@ async def on_command_error(ctx, error):
         await ctx.send("Command on cooldown", delete_after=5)
         await ctx.message.delete()
 
+
 weird_bot.run(os.environ.get("BOTKEY"))
 

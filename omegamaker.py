@@ -1,6 +1,3 @@
-from tkinter import Tk
-
-
 def omegalul_converter(input_string):
     letters = "abcdefghijklmnopqrstuvwxyz"
     regional_indicator_hash = {letter: f":regional_indicator_{letter}: " for letter in letters}
@@ -26,12 +23,5 @@ def omegalul_converter(input_string):
         except:
             output_string_prepro.append(letter)
     output_string = "".join(output_string_prepro)
-
-    r = Tk()
-    r.withdraw()
-    r.clipboard_clear()
-    r.clipboard_append(output_string)
-    r.update()
-    r.destroy()
 
     return output_string
