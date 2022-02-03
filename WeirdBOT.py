@@ -1,7 +1,7 @@
 import os
 from discord.ext import commands
 from BOTrequiredDataPublic import *
-from omegaMaker import *
+from omegamaker import *
 
 weird_bot = commands.Bot(command_prefix="!")
 
