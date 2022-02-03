@@ -1,7 +1,4 @@
-try:
-    from Tkinter import Tk
-except ImportError:
-    from tkinter import Tk
+from tkinter import Tk
 
 
 def omegalul_converter(input_string):
