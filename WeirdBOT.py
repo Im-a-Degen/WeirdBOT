@@ -35,18 +35,18 @@ async def on_message(message):
 
         if ratio_cooldown == 0 and ratio_enabled:
             if ("+ L" in message.content.upper() or "RATIO" in message.content.upper()
-                    or "+ WHITE" in message.content.upper() or " YOU FELL OFF" in message.content.upper()):
+                    or "+ WHITE" in message.content.upper() or " FELL OFF" in message.content.upper()):
                 if "L" not in message.content.upper():
-                    ratio_cooldown += 10
+                    ratio_cooldown += 5
                     await message.channel.send("+ L")
                 if "RATIO" not in message.content.upper():
-                    ratio_cooldown += 10
+                    ratio_cooldown += 5
                     await message.channel.send("+ ratio")
                 if "WHITE" not in message.content.upper():
-                    ratio_cooldown += 10
+                    ratio_cooldown += 5
                     await message.channel.send("+ you're white")
                 if "FELL" not in message.content.upper():
-                    ratio_cooldown += 10
+                    ratio_cooldown += 5
                     await message.channel.send("+ you fell off")
         elif ratio_cooldown != 0:
             ratio_cooldown -= 1
