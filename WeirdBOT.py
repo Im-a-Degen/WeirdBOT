@@ -20,7 +20,7 @@ weird_bot.remove_command("help")
 
 @weird_bot.event
 async def on_message(message):
-    if message.author != weird_bot.user:
+    if message.author != weird_bot.user and message.author != "192725194626957312":
         global chain_cooldown, ratio_cooldown
 
         if message.author.id == weird_recipient:
@@ -33,20 +33,20 @@ async def on_message(message):
         elif chain_cooldown != 0:
             chain_cooldown -= 1
 
-        if "+" in message.content and ratio_cooldown == 0 and ratio_enabled:
+        if ratio_cooldown == 0 and ratio_enabled:
             if ("L" in message.content.upper() or "RATIO" in message.content.upper()
                     or "WHITE" in message.content.upper() or "FELL OFF" in message.content.upper()):
                 if "L" not in message.content.upper():
-                    ratio_cooldown += 5
+                    ratio_cooldown += 10
                     await message.channel.send("+ L")
                 if "RATIO" not in message.content.upper():
-                    ratio_cooldown += 5
+                    ratio_cooldown += 10
                     await message.channel.send("+ ratio")
                 if "WHITE" not in message.content.upper():
-                    ratio_cooldown += 5
+                    ratio_cooldown += 10
                     await message.channel.send("+ you're white")
                 if "FELL" not in message.content.upper():
-                    ratio_cooldown += 5
+                    ratio_cooldown += 10
                     await message.channel.send("+ you fell off")
         elif ratio_cooldown != 0:
             ratio_cooldown -= 1
@@ -87,7 +87,7 @@ async def airstrike(ctx):
 @commands.cooldown(1, 5, commands.BucketType.guild)
 @weird_bot.command()
 async def omegaconvert(ctx):
-    await ctx.message.channel.send(omegalul_converter(ctx.message.content.lstrip("!omegaconvert ")))
+    await ctx.message.channel.send(omegalul_converter(ctx.message.content.split(" ", 1)[1]))
 
 
 @weird_bot.event
